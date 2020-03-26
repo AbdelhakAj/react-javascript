@@ -5,7 +5,6 @@ import { get } from "lodash";
 import "./app.scss";
 
 function App() {
-  const count = useSelector(state => state.count);
   const users = useSelector(state => state.users);
   const dispatch = useDispatch();
 
