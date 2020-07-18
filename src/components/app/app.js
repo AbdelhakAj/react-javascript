@@ -5,8 +5,7 @@ import { get } from "lodash";
 import "./app.scss";
 
 function App() {
-  const { users, count } = useSelector(state => state);
-
+  const users = useSelector(state => state.users);
   const dispatch = useDispatch();
 
   return (
@@ -16,9 +15,6 @@ function App() {
       ) : (
         <>
           <h1> react app</h1>
-          <button onClick={() => dispatch({ type: "INC_COUNT", payload: 5 })}>
-            {count}
-          </button>
           <button onClick={() => dispatch({ type: "GETUSERS" })}>click</button>
           <ul>
             {get(users, "data.data", []).map(({ employee_name }) => (
